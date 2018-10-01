@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/01 11:20:59 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/01 20:00:05 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/01 20:46:37 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ private:
   void _cbb(int err) const; // cant be blank
   void _p(const std::string) const;
   std::string _totab(const std::string) const;
+  void _printFull(const std::string name, std::string val) const;
 };
 
 #endif

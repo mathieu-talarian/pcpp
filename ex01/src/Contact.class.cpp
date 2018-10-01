@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/01 11:20:29 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/01 20:00:34 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/01 20:50:58 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <iomanip>
 
 #include "Contact.class.hpp"
+
+#define OFFSET 30
 
 Contact::Contact(void)
 {
@@ -61,8 +63,27 @@ void Contact::Print() const
               << '|' << std::endl;
 }
 
+void Contact::_printFull(const std::string name, std::string val) const
+{
+    std::cout
+        << name;
+    std::cout << std::setw(OFFSET - name.length());
+    std::cout << val;
+    std::cout << std::endl;
+}
+
 void Contact::PrintFull() const
 {
+    this->_printFull("First name", this->_firstName);
+    this->_printFull("Last name", this->_lastName);
+    this->_printFull("Nickname", this->_nickname);
+    this->_printFull("Login", this->_login);
+    this->_printFull("Postal Address", this->_postalAddress);
+    this->_printFull("Email Address", this->_emailAddress);
+    this->_printFull("Birthday date", this->_birthdayDate);
+    this->_printFull("Favorite Meal", this->_favoriteMeal);
+    this->_printFull("Underwear color", this->_underwearColor);
+    this->_printFull("Darkest secret", this->_darkestSecret);
 }
 
 int Contact::getNbInstances(void)
