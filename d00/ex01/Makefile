@@ -1,16 +1,34 @@
 NAME=phonebook
-CC=gcc -Wall -Werror -Wextra
+CC=clang++
+FLAGS=-Wall -Werror -Wextra
+INCL=-Iincludes
 OBJ=$(SRC:.cpp=.o)
-SRC= \
-trim.cpp\
-Contact.class.cpp\
+
+
+SRC_PATH= src
+SRC_NAME= trim.cpp \
+Contact.class.cpp \
 main.cpp
 
-CHPP= -I Contact.class.hpp
+OBJ_PATH= obj
+OBJ_NAME = $(SRC_NAME:.cpp=.o)
+
+SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
+OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
 
 all : $(NAME)
 
 $(NAME): $(OBJ)
+	$(CC) -o $(NAME) $(OBJ)
 
-%.o: %.cpp
-	$(CC) -o $a -c $< $(CHPP)
+$(OBJ_PATH)/%.o: $(SRC_PATH)/%.cpp
+		@mkdir $(OBJ_PATH) 2> /dev/null || true
+		$(CC) $(CFLAGS) $(INCL) -o $@ -c $<
+
+clean: 
+	@rm -rfv $(OBJ)
+
+fclean: clean
+	@rm -rfv $(NAME)
+
+re : fclean all
