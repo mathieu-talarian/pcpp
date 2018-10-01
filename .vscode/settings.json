@@ -12,6 +12,9 @@
         "algorithm": "cpp",
         "iosfwd": "cpp",
         "string": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "regex": "cpp",
+        "istream": "cpp",
+        "ios": "cpp"
     }
 }

@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/01 11:20:59 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/01 18:52:28 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/01 20:00:05 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ public:
 
   bool isFilled() const;
   void Print() const;
+  void PrintFull() const;
 
 private:
   std::string _firstName;
