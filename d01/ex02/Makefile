@@ -1,4 +1,4 @@
-NAME=phonebook
+NAME=ex02
 CC=clang++
 FLAGS=-Wall -Werror -Wextra
 INCL=-Iincludes
@@ -6,10 +6,7 @@ OBJ=$(SRC:.cpp=.o)
 
 
 SRC_PATH= src
-SRC_NAME= trim.cpp \
-search_contact.cpp \
-Contact.class.cpp \
-main.cpp
+SRC_NAME= main.cpp Zombie.class.cpp ZombieEvent.class.cpp
 
 OBJ_PATH= obj
 OBJ_NAME = $(SRC_NAME:.cpp=.o)

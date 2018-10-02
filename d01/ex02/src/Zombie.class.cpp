@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   trim.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.class.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/01 12:55:44 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/02 11:18:03 by mmoullec         ###   ########.fr       */
+/*   Created: 2018/10/02 11:00:22 by mmoullec          #+#    #+#             */
+/*   Updated: 2018/10/02 11:25:08 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "Zombie.class.hpp"
 
-const std::string &chars = "\t\n\v\f\r ";
-
-static inline std::string &ltrim(std::string &str)
+Zombie::Zombie(std::string name, std::string type) : _name(name), _type(type)
 {
-    str.erase(0, str.find_first_not_of(chars));
-    return str;
 }
 
-static inline std::string &rtrim(std::string &str)
+Zombie::~Zombie()
 {
-    str.erase(str.find_last_not_of(chars) + 1);
-    return str;
 }
 
-std::string &trim(std::string &str)
+std::string getName(void) const
 {
-    return ltrim(rtrim(str));
+    return this->_name;
+}
+
+void setName(std::string name)
+{
+    this->_name = name;
+}
+
+std::string getType(void) const
+{
+    return this->_type;
+}
+
+void setType(std::string type)
+{
+    this->_type = type;
 }

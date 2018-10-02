@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   trim.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.class.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/01 12:55:44 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/02 11:18:03 by mmoullec         ###   ########.fr       */
+/*   Created: 2018/10/02 11:00:29 by mmoullec          #+#    #+#             */
+/*   Updated: 2018/10/02 11:25:27 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include <iostream>
 
-const std::string &chars = "\t\n\v\f\r ";
-
-static inline std::string &ltrim(std::string &str)
+class Zombie
 {
-    str.erase(0, str.find_first_not_of(chars));
-    return str;
-}
+public:
+  Zombie(std::string name, std::string type);
+  ~Zombie();
 
-static inline std::string &rtrim(std::string &str)
-{
-    str.erase(str.find_last_not_of(chars) + 1);
-    return str;
-}
+  std::string getName() const;
+  void setName(std::string);
 
-std::string &trim(std::string &str)
-{
-    return ltrim(rtrim(str));
-}
+  std::string getType() const;
+  void setType(std::string);
+
+private:
+  std::string _name;
+  std::string _type;
+};
