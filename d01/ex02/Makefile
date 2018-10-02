@@ -6,7 +6,7 @@ OBJ=$(SRC:.cpp=.o)
 
 
 SRC_PATH= src
-SRC_NAME= main.cpp Zombie.class.cpp
+SRC_NAME= main.cpp Zombie.class.cpp ZombieEvent.class.cpp
 
 OBJ_PATH= obj
 OBJ_NAME = $(SRC_NAME:.cpp=.o)
