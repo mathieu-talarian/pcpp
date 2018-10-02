@@ -1,11 +1,11 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
+#include "Contact.class.hpp"
+#include <cstdlib>
+#include <iomanip>
 #include <iostream>
 #include <string>
-#include <iomanip>
-#include <cstdlib>
-#include "Contact.class.hpp"
 
 std::string &trim(std::string &str);
 void searchContact(Contact tab[8]);
