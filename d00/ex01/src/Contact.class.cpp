@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/01 11:20:29 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/01 20:50:58 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/02 10:01:57 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,20 +188,20 @@ int Contact::fillContact(void)
         this->_cbb(0);
     while (!this->fill("Login", this->_login))
         this->_cbb(0);
-    // while (!this->fill("Postal Address", this->_postalAddress))
-    //     this->_cbb(0);
-    // while ((err = this->fillEmail(this->_emailAddress)) <= 0)
-    //     this->_cbb(err);
-    // while ((err = this->fillPhoneNumber(this->_phoneNumber)) <= 0)
-    //     this->_cbb(err);
-    // while ((err = this->fillBirthdayDate(this->_birthdayDate)) <= 0)
-    //     this->_cbb(err);
-    // while (!this->fill("Favorite Meal", this->_favoriteMeal))
-    //     this->_cbb(err);
-    // while (!this->fill("Underwear color", this->_underwearColor))
-    //     this->_cbb(err);
-    // while (!this->fill("Darkest secret", this->_darkestSecret))
-    //     this->_cbb(err);
+    while (!this->fill("Postal Address", this->_postalAddress))
+        this->_cbb(0);
+    while ((err = this->fillEmail(this->_emailAddress)) <= 0)
+        this->_cbb(err);
+    while ((err = this->fillPhoneNumber(this->_phoneNumber)) <= 0)
+        this->_cbb(err);
+    while ((err = this->fillBirthdayDate(this->_birthdayDate)) <= 0)
+        this->_cbb(err);
+    while (!this->fill("Favorite Meal", this->_favoriteMeal))
+        this->_cbb(err);
+    while (!this->fill("Underwear color", this->_underwearColor))
+        this->_cbb(err);
+    while (!this->fill("Darkest secret", this->_darkestSecret))
+        this->_cbb(err);
     std::cout << "\033[32m"
               << "Contact added"
               << "\033[0m" << std::endl;

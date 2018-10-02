@@ -23,7 +23,7 @@ $(NAME): $(OBJ)
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.cpp
 		@mkdir $(OBJ_PATH) 2> /dev/null || true
-		$(CC) $(CFLAGS) $(INCL) -o $@ -c $<
+		$(CC) $(FLAGS) $(INCL) -o $@ -c $<
 
 clean: 
 	@rm -rfv $(OBJ)

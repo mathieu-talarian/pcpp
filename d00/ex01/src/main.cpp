@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/01 11:18:11 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/01 21:07:38 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/02 10:10:30 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void NoSpaceLeft(void)
 
 void addContact(Contact tab[8])
 {
-	std::cout << Contact::getNbFilled() << std::endl;
 	if (Contact::getNbFilled() < 8)
 		tab[Contact::getNbFilled()].fillContact();
 	else
@@ -40,7 +39,7 @@ void printTabHead()
 
 void checkAndPrintContact(Contact tab[8], std::string input)
 {
-	int i = std::atoi(input.c_str()) - 1;
+	int i = std::atoi(input.c_str());
 	if (i > 0 && i < 9)
 	{
 		i--;
@@ -65,7 +64,7 @@ void askForPerson(Contact tab[8])
 	{
 		trim(input);
 		if (input.compare("RETURN") == 0)
-			return;
+			break;
 		else
 			checkAndPrintContact(tab, input);
 	}
@@ -99,11 +98,11 @@ int main(void)
 
 	std::cout << "PHONEBOOK" << std::endl
 			  << std::endl;
-	std::cout << "Enter ADD | SEARCH | EXIT" << std::endl;
+	std::cout << "Enter ADD | SEARCH | EXIT" << std::endl
+			  << "> ";
 
 	while (std::getline(std::cin, input))
 	{
-		std::cout << "Enter ADD | SEARCH | EXIT" << std::endl;
 		trim(input);
 		if (input.compare("ADD") == 0)
 			addContact(tab);
@@ -111,10 +110,9 @@ int main(void)
 			searchContact(tab);
 		else if (input.compare("EXIT") == 0)
 			std::exit(0);
-		else
-		{
-			std::cout << "\r";
-			continue;
-		}
+		std::cout << "\r";
+		std::cout << "Enter ADD | SEARCH | EXIT" << std::endl
+				  << "> ";
+		continue;
 	}
 }
