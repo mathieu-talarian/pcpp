@@ -3,7 +3,7 @@
 void printTabHead() {
   std::cout << '|' << std::setw(10) << "Index" << '|' << std::setw(10)
             << "Firstname" << '|' << std::setw(10) << "LastName" << '|'
-            << std::setw(10) << "Login" << '|' << std::endl;
+            << std::setw(10) << "Nickname" << '|' << std::endl;
 }
 
 void checkAndPrintContact(Contact tab[8], std::string input) {

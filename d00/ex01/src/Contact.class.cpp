@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/01 11:20:29 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/02 15:00:34 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/02 15:18:35 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void Contact::Print() const {
   std::cout << '|' << std::setw(10) << this->_index << '|' << std::setw(10)
             << this->_totab(this->_firstName) << '|' << std::setw(10)
             << this->_totab(this->_lastName) << '|' << std::setw(10)
-            << this->_totab(this->_login) << '|' << std::endl;
+            << this->_totab(this->_nickname) << '|' << std::endl;
 }
 
 void Contact::_printFull(const std::string name, std::string val) const {
