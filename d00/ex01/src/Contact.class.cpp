@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/01 11:20:29 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/02 13:40:03 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/02 15:00:34 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void Contact::_p(const std::string str) const { std::cout << str << std::endl; }
 
 std::string Contact::_totab(const std::string str) const {
   char buffer[11];
-  if (str.length() >= 10) {
+  if (str.length() > 10) {
     std::size_t length = str.copy(buffer, 9, 0);
     buffer[length] = '.';
     buffer[length + 1] = 0;

@@ -1,4 +1,4 @@
-NAME=phonebook
+NAME=ex02
 CC=clang++
 FLAGS=-Wall -Werror -Wextra
 INCL=-Iincludes
@@ -6,10 +6,7 @@ OBJ=$(SRC:.cpp=.o)
 
 
 SRC_PATH= src
-SRC_NAME= trim.cpp \
-search_contact.cpp \
-Contact.class.cpp \
-main.cpp
+SRC_NAME= main.cpp Zombie.class.cpp
 
 OBJ_PATH= obj
 OBJ_NAME = $(SRC_NAME:.cpp=.o)
@@ -20,7 +17,7 @@ OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
 all : $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(FLAGS) -o $(NAME) $(OBJ)
+	$(CC) -o $(NAME) $(OBJ)
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.cpp
 		@mkdir $(OBJ_PATH) 2> /dev/null || true
