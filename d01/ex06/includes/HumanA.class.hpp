@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/02 18:16:52 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/02 18:26:41 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/02 18:37:16 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ class HumanA {
 public:
   HumanA(std::string name, Weapon weapon);
   ~HumanA();
-
+  void attack() const;
 private:
   std::string _name;
   Weapon _weapon;
