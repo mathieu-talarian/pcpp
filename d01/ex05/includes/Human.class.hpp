@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/02 17:31:01 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/02 18:01:16 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/03 12:04:36 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ class Human {
 public:
   Human();
   ~Human();
-  Brain &getBrain();
+  const Brain &getBrain() const;
   std::string identify() const;
 
 private:
-  Brain _brain;
+  const Brain _brain;
 };
 
 #endif

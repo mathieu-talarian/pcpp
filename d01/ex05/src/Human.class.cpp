@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/02 17:30:26 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/02 18:01:19 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/03 12:04:43 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,4 @@ Human::~Human(void) {}
 
 std::string Human::identify() const { return this->_brain.identify(); }
 
-Brain &Human::getBrain() { return this->_brain; }
+const Brain &Human::getBrain() const { return this->_brain; }
