@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/03 11:16:12 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/03 17:08:48 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/03 18:19:07 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int copyToFile(std::string &s, std::string filename) {
   std::string fn;
   std::ofstream replaced;
 
+  std::transform(filename.begin(), filename.end(), filename.begin(), ::toupper);
   fn = filename.append(".replace");
   replaced.open(fn);
   if (!replaced) {
