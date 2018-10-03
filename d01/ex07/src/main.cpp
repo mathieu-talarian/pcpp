@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/03 11:16:12 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/03 16:20:44 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/03 17:08:48 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ int copyToFile(std::string &s, std::string filename) {
 int main(int ac, char *av[]) {
   std::ifstream is;
   std::string s;
-
   if (checkArg(ac))
     return EXIT_FAILURE;
   if (openFile(is, av[1]))
