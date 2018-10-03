@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/03 11:16:12 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/03 13:12:14 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/03 16:20:44 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,11 @@ int openFile(std::ifstream &is, std::string filename) {
 }
 
 int buffToString(std::ifstream &is, std::string &s) {
-  return std::getline(is, s, '\0') ? EXIT_SUCCESS : EXIT_FAILURE;
+  return std::getline(is, s, '\0')
+             ? EXIT_SUCCESS
+             : (std::cout << "Can't convert to string, is this a folder?"
+                          << std::endl &&
+                EXIT_FAILURE);
 }
 
 int replacing(std::string &s, std::string s1, std::string s2) {
@@ -51,6 +55,10 @@ int copyToFile(std::string &s, std::string filename) {
 
   fn = filename.append(".replace");
   replaced.open(fn);
+  if (!replaced) {
+    return std::cerr << "Can't write on file " << fn << std::endl &&
+           EXIT_FAILURE;
+  }
   replaced << s.c_str();
   replaced.close();
   return EXIT_SUCCESS;
