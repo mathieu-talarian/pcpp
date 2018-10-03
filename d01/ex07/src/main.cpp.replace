@@ -22,11 +22,11 @@ int checkArg(int ac) {
   return EXIT_SUCCESS;
 }
 
-int openFile(std::ifstream &is, std::string filename) {
-  is.open(filename, std::ios::binary);
+int oFile(std::ifstream &is, std::string filename) {
+  is.o(filename, std::ios::binary);
   if ((is.rdstate() & std::ifstream::failbit) != 0) {
     is.close();
-    return std::cerr << "Error opening '" << filename << "'\n" && EXIT_FAILURE;
+    return std::cerr << "Error oing '" << filename << "'\n" && EXIT_FAILURE;
   }
   return EXIT_SUCCESS;
 }
@@ -50,7 +50,7 @@ int copyToFile(std::string &s, std::string filename) {
   std::ofstream replaced;
 
   fn = filename.append(".replace");
-  replaced.open(fn);
+  replaced.o(fn);
   replaced << s.c_str();
   replaced.close();
   return EXIT_SUCCESS;
@@ -62,7 +62,7 @@ int main(int ac, char *av[]) {
 
   if (checkArg(ac))
     return EXIT_FAILURE;
-  if (openFile(is, av[1]))
+  if (oFile(is, av[1]))
     return EXIT_FAILURE;
   if (buffToString(is, s))
     return EXIT_FAILURE;
