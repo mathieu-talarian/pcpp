@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/04 02:21:45 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/04 03:31:59 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/04 16:21:54 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ Fixed &Fixed::operator++(void) {
 Fixed Fixed::operator++(int) {
   Fixed ret = (*this);
   this->_raw++;
+  // this++;
   return (ret);
 }
 
@@ -77,7 +78,8 @@ Fixed &Fixed::operator--(void) {
 
 Fixed Fixed::operator--(int) {
   Fixed ret = (*this);
-  this->_raw++;
+  this->_raw--;
+  // this--;
   return (ret);
 }
 
