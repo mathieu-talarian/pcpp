@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/04 18:09:37 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/05 15:07:51 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/05 15:21:00 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class ClapTrap {
 public:
   ClapTrap(std::string name);
   ClapTrap(ClapTrap const &);
-  // ClapTrap &operator=(ClapTrap const &);
+  ClapTrap &operator=(ClapTrap const &);
 
   ~ClapTrap();
 
@@ -35,10 +35,6 @@ public:
   uint getLVL(void) const;
   void setLVL(uint);
   // - *
-
-protected:
-  std::string construction_quote;
-  std::string destruction_quote;
 
 private:
   uint _hit_points;

@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/04 18:10:23 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/05 15:07:12 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/05 15:24:00 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,16 @@ ClapTrap::ClapTrap(std::string name)
 ClapTrap::ClapTrap(ClapTrap const &cpy) {
   STD("Hahhhh you made me from another me ... ");
   *this = cpy;
+}
+
+ClapTrap &ClapTrap::operator=(ClapTrap const &cpy) {
+  if (this != &cpy) {
+    this->setHP(cpy.getHP());
+    this->setMHP(cpy.getMHP());
+    this->setLVL(cpy.getLVL());
+    this->_name = cpy._name;
+  }
+  return *this;
 }
 
 ClapTrap::~ClapTrap() { STD("Bye creeeeeeeeeep..."); }
