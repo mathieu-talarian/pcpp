@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/05 16:27:27 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/05 16:56:43 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/05 20:03:42 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ NinjaTrap::~NinjaTrap(void) { STD(NTDQ); }
 void NinjaTrap::ninjaShoebox(ClapTrap const &target) {
   STD("Ahahah little claptrap " << target.getName());
 }
-void NinjaTrap::ninjaShoebox(FlagTrap const &target) {
+void NinjaTrap::ninjaShoebox(FragTrap const &target) {
   STD("hehe you're so cute 📸  " << target.getName());
 }
 void NinjaTrap::ninjaShoebox(ScavTrap const &target) {

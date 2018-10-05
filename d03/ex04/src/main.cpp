@@ -6,12 +6,12 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/04 15:31:49 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/05 19:56:54 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/05 20:03:42 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.class.hpp"
-#include "FlagTrap.class.hpp"
+#include "FragTrap.class.hpp"
 #include "NinjaTrap.class.hpp"
 #include "ScavTrap.class.hpp"
 #include "SuperTrap.class.hpp"

@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FlagTrap.class.hpp                                 :+:      :+:    :+:   */
+/*   ScavTrap.class.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/04 14:40:02 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/04 15:37:33 by mmoullec         ###   ########.fr       */
+/*   Created: 2018/10/04 17:05:06 by mmoullec          #+#    #+#             */
+/*   Updated: 2018/10/04 18:05:25 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FLAGTRAP_CLASS_CPP
-#define FLAGTRAP_CLASS_CPP
+#ifndef SCAVTRAP_CLASS_HPP
+#define SCAVTRAP_CLASS_HPP
+
 #include <iostream>
 
-class FlagTrap {
-public:
-  FlagTrap(std::string name);
-  FlagTrap(FlagTrap const &);
-  FlagTrap &operator=(FlagTrap const &);
+class ScavTrap {
 
-  ~FlagTrap();
+public:
+  ScavTrap(std::string name);
+  ScavTrap(ScavTrap const &);
+  ScavTrap &operator=(ScavTrap const &);
+
+  ~ScavTrap();
 
   void rangedAttack(std::string const &) const;
   void meleeAttack(std::string const &) const;
   void takeDamage(uint);
   void beRepaired(uint);
 
-  void vaulthunter_dot_exe(std::string const &);
+  void challengerNewcomer() const;
 
 private:
   int _hit_points;
@@ -41,7 +43,7 @@ private:
   int _armor_damage_reduction;
   static std::string _construction_quote;
   static std::string _destruction_quote;
-  static std::string _funny_attacks[];
+  static std::string _challenges[];
 };
 
-#endif // !FLAGTRAP_CLASS_CPP
+#endif // !SCAVTRAP_CLASS_HPP

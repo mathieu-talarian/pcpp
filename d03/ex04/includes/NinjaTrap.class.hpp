@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/05 16:27:50 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/05 18:03:21 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/05 20:03:42 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.class.hpp"
 
-#include "FlagTrap.class.hpp"
+#include "FragTrap.class.hpp"
 #include "ScavTrap.class.hpp"
 
 #define NTCQ                                                                   \
@@ -32,7 +32,7 @@ public:
   ~NinjaTrap();
 
   void ninjaShoebox(ClapTrap const &);
-  void ninjaShoebox(FlagTrap const &);
+  void ninjaShoebox(FragTrap const &);
   void ninjaShoebox(ScavTrap const &);
   void ninjaShoebox(NinjaTrap const &);
 };

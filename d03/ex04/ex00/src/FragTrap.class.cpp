@@ -1,66 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FlagTrap.class.cpp                                 :+:      :+:    :+:   */
+/*   FragTrap.class.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/04 14:44:08 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/04 17:51:14 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/05 20:02:25 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FlagTrap.class.hpp"
+#include "FragTrap.class.hpp"
 #include <time.h> /* time */
 
 #define STD(x) std::cout << x << std::endl << std::endl;
 #define ENDL std::endl
 
-FlagTrap::FlagTrap(std::string name)
+FragTrap::FragTrap(std::string name)
     : _hit_points(100), _max_hit_points(100), _energy_points(100),
       _max_energy_points(100), _level(1), _name(name), _melee_attack_damage(30),
       _ranged_attack_damage(20), _armor_damage_reduction(5) {
   STD("Hello , i'm " << this->_name << " a CL4PTR4P unity");
-  STD(FlagTrap::_construction_quote);
+  STD(FragTrap::_construction_quote);
   STD("Level " << this->_level);
 }
 
-FlagTrap::FlagTrap(FlagTrap const &cpy) {
-  STD(FlagTrap::_construction_quote);
+FragTrap::FragTrap(FragTrap const &cpy) {
+  STD(FragTrap::_construction_quote);
   *this = cpy;
 }
 
-FlagTrap &FlagTrap::operator=(FlagTrap const &cpy) {
+FragTrap &FragTrap::operator=(FragTrap const &cpy) {
   if (this != &cpy) {
-    this->_hit_points = cpy._hit_points;
-    this->_max_hit_points = cpy._max_hit_points;
-    this->_energy_points = cpy._energy_points;
-    this->_max_energy_points = cpy._max_energy_points;
-    this->_level = cpy._level;
-    this->_name = cpy._name;
-    this->_melee_attack_damage = cpy._melee_attack_damage;
-    this->_ranged_attack_damage = cpy._ranged_attack_damage;
-    this->_armor_damage_reduction = cpy._armor_damage_reduction;
   }
   return *this;
 }
 
-FlagTrap::~FlagTrap(void) { STD(FlagTrap::_destruction_quote); }
+FragTrap::~FragTrap(void) { STD(FragTrap::_destruction_quote); }
 
 // Member functions
-void FlagTrap::rangedAttack(std::string const &target) const {
+void FragTrap::rangedAttack(std::string const &target) const {
   STD("FRAG-TP " << this->_name << " attacks " << target
                  << " with his tomahawk HAHA, causing "
                  << this->_ranged_attack_damage << " points of damage!");
 }
 
-void FlagTrap::meleeAttack(std::string const &target) const {
+void FragTrap::meleeAttack(std::string const &target) const {
   STD("FRAG-TP " << this->_name << " attacks " << target
                  << " with his little robots fists, causing "
                  << this->_melee_attack_damage << " points of damage!");
 }
 
-void FlagTrap::takeDamage(uint amount) {
+void FragTrap::takeDamage(uint amount) {
   if (amount < uint(this->_armor_damage_reduction))
     STD("AHAHAHAH !!" << std::endl
                       << " Can't you him me with something sool ?");
@@ -76,7 +67,7 @@ void FlagTrap::takeDamage(uint amount) {
   }
 }
 
-void FlagTrap::beRepaired(uint amount) {
+void FragTrap::beRepaired(uint amount) {
   if ((this->_hit_points + amount) > this->_max_hit_points) {
     this->_hit_points = this->_max_hit_points;
     STD("Whoooaaaa , i'm like a new Cl4AP-TP unity, and i'm full HP"
@@ -91,7 +82,7 @@ void FlagTrap::beRepaired(uint amount) {
   }
 }
 
-void FlagTrap::vaulthunter_dot_exe(std::string const &target) {
+void FragTrap::vaulthunter_dot_exe(std::string const &target) {
   int atk = rand() % 8;
   STD(atk);
   STD("Got " << this->_energy_points << " / " << this->_max_energy_points
@@ -102,10 +93,10 @@ void FlagTrap::vaulthunter_dot_exe(std::string const &target) {
   }
   this->_energy_points -= 25;
 
-  STD(FlagTrap::_funny_attacks[atk] << " on " << target << std::endl);
+  STD(FragTrap::_funny_attacks[atk] << " on " << target << std::endl);
 }
 
-std::string FlagTrap::_construction_quote(
+std::string FragTrap::_construction_quote(
     "Let's get this party started! \n"
     "... ... ... \n"
     "... ... ... \n"
@@ -122,9 +113,9 @@ std::string FlagTrap::_construction_quote(
     "... ... ... \n"
     "Creep ?\n");
 
-std::string FlagTrap::_destruction_quote("I'll die the way I lived: annoying!");
+std::string FragTrap::_destruction_quote("I'll die the way I lived: annoying!");
 
-std::string FlagTrap::_funny_attacks[] = {
+std::string FragTrap::_funny_attacks[] = {
     "🔪 Does this mean I can start dancing? Pleeeeeeaaaaase?",
     "🔪 One, two punch",
     "🔪 Can I shoot something now? Or climb some stairs? SOMETHING exciting?",

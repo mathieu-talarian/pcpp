@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FlagTrap.class.cpp                                 :+:      :+:    :+:   */
+/*   FragTrap.class.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/04 14:44:08 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/05 18:08:47 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/05 20:03:42 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <time.h> /* time */
 
 #include "ClapTrap.class.hpp"
-#include "FlagTrap.class.hpp"
+#include "FragTrap.class.hpp"
 
-FlagTrap::FlagTrap(std::string name) : ClapTrap(name) {
-  this->setHP(100);
-  this->setMHP(100);
-  this->_ranged_attack_damage = 20;
-  this->_armor_damage_reduction = 5;
+FragTrap::FragTrap(std::string name) : ClapTrap(name) {
   STD("Hello , i'm " << this->_name << " a CL4PTR4P unity");
   STD("FR4G-TP");
   STD(FTCQ);
   STD("Level " << this->getLVL());
 }
 
-FlagTrap::FlagTrap(FlagTrap const &cpy) : ClapTrap(cpy) {
+FragTrap::FragTrap(FragTrap const &cpy) : ClapTrap(cpy) {
   STD("10101010000010100100110100101011110101011101010101010101010101101010");
   *this = cpy;
 }
 
-FlagTrap &FlagTrap::operator=(FlagTrap const &cpy) {
+FragTrap &FragTrap::operator=(FragTrap const &cpy) {
   if (this != &cpy) {
     this->setHP(cpy.getHP());
     this->setMHP(cpy.getMHP());
@@ -46,11 +42,11 @@ FlagTrap &FlagTrap::operator=(FlagTrap const &cpy) {
   return *this;
 }
 
-FlagTrap::~FlagTrap(void) { STD(FTDQ); }
+FragTrap::~FragTrap(void) { STD(FTDQ); }
 
 // Member functions
 
-void FlagTrap::vaulthunter_dot_exe(std::string const &target) {
+void FragTrap::vaulthunter_dot_exe(std::string const &target) {
   int atk = rand() % 8;
   STD("Got " << this->_energy_points << " / " << this->_max_energy_points
              << " mana");
@@ -60,10 +56,10 @@ void FlagTrap::vaulthunter_dot_exe(std::string const &target) {
   }
   this->_energy_points -= 25;
 
-  STD(FlagTrap::_funny_attacks[atk] << " on " << target << std::endl);
+  STD(FragTrap::_funny_attacks[atk] << " on " << target << std::endl);
 }
 
-std::string FlagTrap::_funny_attacks[] = {
+std::string FragTrap::_funny_attacks[] = {
     "🔪 Does this mean I can start dancing? Pleeeeeeaaaaase?",
     "🔪 One, two punch",
     "🔪 Can I shoot something now? Or climb some stairs? SOMETHING "

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FlagTrap.class.hpp                                 :+:      :+:    :+:   */
+/*   FragTrap.class.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/04 14:40:02 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/05 16:24:19 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/05 20:03:42 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FLAGTRAP_CLASS_CPP
-#define FLAGTRAP_CLASS_CPP
+#ifndef FragTrap_CLASS_CPP
+#define FragTrap_CLASS_CPP
 
 #include "ClapTrap.class.hpp"
 
@@ -35,13 +35,13 @@
 
 #define FTDQ "I'll die the way I lived: annoying!"
 
-class FlagTrap : public ClapTrap {
+class FragTrap : public ClapTrap {
 public:
-  FlagTrap(std::string name);
-  FlagTrap(FlagTrap const &);
-  FlagTrap &operator=(FlagTrap const &);
+  FragTrap(std::string name);
+  FragTrap(FragTrap const &);
+  FragTrap &operator=(FragTrap const &);
 
-  ~FlagTrap();
+  ~FragTrap();
 
   void vaulthunter_dot_exe(std::string const &);
 
@@ -49,4 +49,4 @@ private:
   static std::string _funny_attacks[];
 };
 
-#endif // !FLAGTRAP_CLASS_CPP
+#endif // !FragTrap_CLASS_CPP

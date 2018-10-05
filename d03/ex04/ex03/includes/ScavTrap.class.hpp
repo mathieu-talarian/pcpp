@@ -1,52 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FlagTrap.class.hpp                                 :+:      :+:    :+:   */
+/*   ScavTrap.class.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/04 14:40:02 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/05 16:24:19 by mmoullec         ###   ########.fr       */
+/*   Created: 2018/10/04 17:05:06 by mmoullec          #+#    #+#             */
+/*   Updated: 2018/10/05 16:25:14 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FLAGTRAP_CLASS_CPP
-#define FLAGTRAP_CLASS_CPP
+#ifndef SCAVTRAP_CLASS_HPP
+#define SCAVTRAP_CLASS_HPP
 
 #include "ClapTrap.class.hpp"
 
-#define FTCQ                                                                   \
-  "Let's get this party started! \n"                                           \
+#define STCQ                                                                   \
+  "I am right behind you, Vault Hunting friend! \n"                            \
   "... ... ... \n"                                                             \
   "... ... ... \n"                                                             \
   "... ... ... \n"                                                             \
-  "I once started a revolution myself. There were lots of guns and a lot "     \
-  "of "                                                                        \
-  "dying. \n"                                                                  \
+  "Annihilate them for breakfast, Willy! \n"                                   \
   "... ... ... \n"                                                             \
   "... ... ... \n"                                                             \
   "... ... ... \n"                                                             \
-  "You'd think I would have gotten some better benefits out of the whole "     \
-  "thing but no, demoted back to door-opening servitude!\n"                    \
+  "I will prove to you my robotic superiority! \n"                             \
   "... ... ... \n"                                                             \
   "... ... ... \n"                                                             \
   "... ... ... \n"                                                             \
-  "Creep ?\n"
+  "Staiiiiiiiiiiiiiiiiiiiiiirs 😭\n"
 
-#define FTDQ "I'll die the way I lived: annoying!"
+#define STDQ "No fair! I wasn't ready.\n"
 
-class FlagTrap : public ClapTrap {
+class ScavTrap : public ClapTrap {
+
 public:
-  FlagTrap(std::string name);
-  FlagTrap(FlagTrap const &);
-  FlagTrap &operator=(FlagTrap const &);
+  ScavTrap(std::string name);
+  ScavTrap(ScavTrap const &);
+  ScavTrap &operator=(ScavTrap const &);
 
-  ~FlagTrap();
+  ~ScavTrap();
 
-  void vaulthunter_dot_exe(std::string const &);
+  void challengerNewcomer() const;
 
 private:
-  static std::string _funny_attacks[];
+  static std::string _challenges[];
 };
 
-#endif // !FLAGTRAP_CLASS_CPP
+#endif // !SCAVTRAP_CLASS_HPP
