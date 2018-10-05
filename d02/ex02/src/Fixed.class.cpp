@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/04 02:21:45 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/04 16:21:54 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/05 14:02:43 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,17 @@ Fixed Fixed::operator*(Fixed const &r) {
 
 Fixed Fixed::operator/(Fixed const &r) {
   Fixed ret;
-  ret._raw = (this->_raw << this->_bit) / r.getRawBits();
+  ret._raw = (this->_raw << this->_bit) / float(r.getRawBits());
   return (ret);
 }
 
+// Pre incrementation
 Fixed &Fixed::operator++(void) {
   this->_raw++;
   return (*this);
 }
 
+// Post icrementation
 Fixed Fixed::operator++(int) {
   Fixed ret = (*this);
   this->_raw++;
@@ -71,11 +73,13 @@ Fixed Fixed::operator++(int) {
   return (ret);
 }
 
+// Pre decrementation
 Fixed &Fixed::operator--(void) {
   this->_raw--;
   return (*this);
 }
 
+// Post Decrementation
 Fixed Fixed::operator--(int) {
   Fixed ret = (*this);
   this->_raw--;
