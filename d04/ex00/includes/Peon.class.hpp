@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Peon.class.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/04 15:31:49 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/05 19:56:54 by mmoullec         ###   ########.fr       */
+/*   Created: 2018/10/05 18:56:38 by mmoullec          #+#    #+#             */
+/*   Updated: 2018/10/05 19:42:48 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.class.hpp"
-#include "FlagTrap.class.hpp"
-#include "NinjaTrap.class.hpp"
-#include "ScavTrap.class.hpp"
-#include "SuperTrap.class.hpp"
+#ifndef PEON_CLASS_HPP
+#define PEON_CLASS_HPP
 
-int main() {
-  SuperTrap a("AA");
-  ScavTrap b("BB");
-  a.showStats();
-  a.ninjaShoebox(b);
-  a.vaulthunter_dot_exe("Jack");
-  return 0;
-}
+#include "Victim.class.hpp"
+
+class Peon : public Victim {
+public:
+  Peon(std::string);
+  Peon(Peon const &);
+  Peon &operator=(Peon const &);
+
+  ~Peon();
+
+  void getPolymorphed() const;
+};
+
+#endif // !PEON_CLASS_HPP
