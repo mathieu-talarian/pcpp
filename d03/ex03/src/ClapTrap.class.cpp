@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/04 18:10:23 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/05 16:23:09 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/05 16:49:20 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ void ClapTrap::setMHP(uint mhp) { this->_max_hit_points = mhp; }
 
 uint ClapTrap::getLVL(void) const { return this->_level; }
 void ClapTrap::setLVL(uint lvl) { this->_level = lvl; }
+
+std::string ClapTrap::getName(void) const { return this->_name; }
 
 void ClapTrap::rangedAttack(std::string const &target) const {
   STD("FRAG-TP " << this->_name << " attacks " << target

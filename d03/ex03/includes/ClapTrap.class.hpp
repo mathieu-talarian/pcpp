@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/04 18:09:37 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/05 16:01:59 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/05 16:48:46 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ public:
 
   uint getLVL(void) const;
   void setLVL(uint);
+
+  std::string getName(void) const;
   // - *
 
   void rangedAttack(std::string const &) const;
