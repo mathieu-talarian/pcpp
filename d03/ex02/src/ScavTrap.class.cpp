@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/04 17:05:25 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/05 15:04:16 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/05 15:43:30 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,12 @@
 #include "ClapTrap.class.hpp"
 #include "ScavTrap.class.hpp"
 
-ScavTrap::ScavTrap(std::string name)
-    : ClapTrap(name), _energy_points(50), _max_energy_points(50),
-      _melee_attack_damage(20), _ranged_attack_damage(15),
-      _armor_damage_reduction(3) {
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
+  this->_energy_points = 50;
+  this->_max_energy_points = 50;
+  this->_melee_attack_damage = 20;
+  this->_ranged_attack_damage = 15;
+  this->_armor_damage_reduction = 3;
   STD("Hello , i'm " << this->_name << " a CL4PTR4P unity");
   STD(STCQ);
   STD("Level " << this->getLVL());

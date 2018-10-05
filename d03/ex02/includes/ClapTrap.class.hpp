@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/04 18:09:37 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/05 15:21:00 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/05 15:45:03 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,18 @@ public:
   void setLVL(uint);
   // - *
 
+protected:
+  int _energy_points;
+  int _max_energy_points;
+  std::string _name;
+  int _melee_attack_damage;
+  int _ranged_attack_damage;
+  int _armor_damage_reduction;
+
 private:
   uint _hit_points;
   uint _max_hit_points;
   uint _level;
-  std::string _name;
 };
 
 #endif // !CLAPTRAP_CLASS_HPP

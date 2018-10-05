@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/04 14:44:08 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/05 15:17:08 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/05 15:42:24 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@
 #include "FlagTrap.class.hpp"
 
 FlagTrap::FlagTrap(std::string name)
-    : ClapTrap(name), _energy_points(100), _max_energy_points(100),
-      _melee_attack_damage(30), _ranged_attack_damage(20),
-      _armor_damage_reduction(5) {
+    : ClapTrap(name) {
   STD("Hello , i'm " << this->_name << " a CL4PTR4P unity");
   STD("FR4G-TP");
   STD(FTCQ);

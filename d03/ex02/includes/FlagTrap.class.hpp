@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/04 14:40:02 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/05 15:02:33 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/05 15:40:33 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,6 @@ public:
   void vaulthunter_dot_exe(std::string const &);
 
 private:
-  int _energy_points;
-  int _max_energy_points;
-  std::string _name;
-  int _melee_attack_damage;
-  int _ranged_attack_damage;
-  int _armor_damage_reduction;
 
   static std::string _funny_attacks[];
 };
