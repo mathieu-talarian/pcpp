@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/06 15:00:24 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/06 16:24:22 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/06 17:15:03 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,6 +131,17 @@ void List::delete_position(int pos) {
     current = current->next;
   }
   previous->next = current->next;
+}
+
+bool List::checkIfAlreadyIn(void *node) const {
+  t_node *h = this->_head;
+  while (h) {
+    if (node == h->data) {
+      return true;
+    }
+    h = h->next;
+  }
+  return false;
 }
 
 void List::_deletefn(ISpaceMarine *data) { delete data; }

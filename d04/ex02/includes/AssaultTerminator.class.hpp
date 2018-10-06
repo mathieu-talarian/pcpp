@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Squad.class.hpp                                    :+:      :+:    :+:   */
+/*   AssaultTerminator.class.hpp                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/06 13:27:22 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/06 17:14:51 by mmoullec         ###   ########.fr       */
+/*   Created: 2018/10/06 16:58:57 by mmoullec          #+#    #+#             */
+/*   Updated: 2018/10/06 17:02:26 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SQUAD_CLASS_HPP
-#define SQUAD_CLASS_HPP
+#ifndef ASSAULTTERMINATOR_CLASS_HPP
+#define ASSAULTTERMINATOR_CLASS_HPP
 
 #include "ISpaceMarine.class.hpp"
-#include "ISquad.class.hpp"
-#include "List.class.hpp"
 #include <iostream>
 
-class Squad : public ISquad {
-
+class AssaultTerminator : public ISpaceMarine {
 public:
-  Squad();
-  Squad(const Squad &);
-  Squad &operator=(const Squad &);
-  ~Squad();
-  int getCount() const;
-  ISpaceMarine *getUnit(int) const;
-  int push(ISpaceMarine *);
+  AssaultTerminator();
+  AssaultTerminator(const AssaultTerminator &);
+  AssaultTerminator &operator=(const AssaultTerminator &);
+  ~AssaultTerminator();
+
+  ISpaceMarine *clone() const;
+  void battleCry() const;
+  void rangedAttack() const;
+  void meleeAttack() const;
 
 private:
-  List *_squads;
-  void _deletefn(ISpaceMarine *);
 };
 
-#endif // !SQUAD_CLASS_HPP
+#endif // !ASSAULTTERMINATOR_CLASS_HPP

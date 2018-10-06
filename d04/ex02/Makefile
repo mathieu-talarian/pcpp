@@ -6,7 +6,7 @@ OBJ=$(SRC:.cpp=.o)
 
 
 SRC_PATH= src
-SRC_NAME= main.cpp List.class.cpp Squad.class.cpp TacticalMarine.class.cpp
+SRC_NAME= main.cpp List.class.cpp Squad.class.cpp TacticalMarine.class.cpp AssaultTerminator.class.cpp
 
 OBJ_PATH= obj
 OBJ_NAME = $(SRC_NAME:.cpp=.o)

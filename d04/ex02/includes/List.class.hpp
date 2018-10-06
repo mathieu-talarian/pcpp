@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/06 15:00:47 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/06 16:18:57 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/06 17:12:21 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ public:
   void delete_first(void);
   void delete_last(void);
   void delete_position(int);
+
+  bool checkIfAlreadyIn(void *) const;
 
 private:
   t_node *_head, *_tail;

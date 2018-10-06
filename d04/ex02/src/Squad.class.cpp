@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/06 13:33:38 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/06 16:13:31 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/06 17:14:32 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,13 @@ ISpaceMarine *Squad::getUnit(int i) const {
 }
 
 int Squad::push(ISpaceMarine *sp) {
-  this->_squads->createNode(sp);
+  if (sp) {
+      if (!this->_squads->checkIfAlreadyIn(sp)) {
+
+    this->_squads->createNode(sp);
+    return this->_squads->count();
+      } else
+        std::cout << "Already in the list" << std::endl;
+  }
   return this->_squads->count();
 }
