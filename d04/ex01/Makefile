@@ -8,7 +8,8 @@ OBJ=$(SRC:.cpp=.o)
 SRC_PATH= src
 SRC_NAME= main.cpp AWeapon.class.cpp PowerFist.class.cpp PlasmaRifle.class.cpp \
 RadScorpion.class.cpp Character.class.cpp \
-Enemy.class.cpp
+Enemy.class.cpp \
+SuperMutant.class.cpp
 
 OBJ_PATH= obj
 OBJ_NAME = $(SRC_NAME:.cpp=.o)
