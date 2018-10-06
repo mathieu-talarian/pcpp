@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/06 00:15:37 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/06 00:52:45 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/06 13:23:09 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,21 @@ void Character::recoverAP() {
 void Character::equip(AWeapon *weapon) { this->_weapon = weapon; }
 
 void Character::attack(Enemy *enemy) {
-  if (this->_ap >= this->_weapon->getApCost()) {
-    this->_ap -= _weapon->getApCost();
-    enemy->takeDamage(_weapon->getDmg());
-    std::cout << _name << " attacks " << enemy->getType() << " with a "
-              << _weapon->getName() << std::endl;
-    this->_weapon->attack();
-    // if (enemy->getHP() == 0)
-    // delete enemy;
+  if (enemy->getHP() > 0) {
+    if (this->_ap >= this->_weapon->getApCost()) {
+      this->_ap -= _weapon->getApCost();
+      enemy->takeDamage(_weapon->getDmg());
+      std::cout << this->_name << " attacks " << enemy->getType() << " with a "
+                << this->_weapon->getName() << std::endl;
+      this->_weapon->attack();
+      if (enemy->getHP() == 0)
+        delete enemy;
+    } else {
+      std::cout << "don't have enough ap" << std::endl;
+    }
   } else {
-    std::cout << "don't have enough ap" << std::endl;
+    std::cout << "this enemy " << enemy->getType() << " is already dead"
+              << std::endl;
   }
 }
 

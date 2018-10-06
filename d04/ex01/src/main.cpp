@@ -26,17 +26,12 @@ int main() {
     zaz->attack(b);
     zaz->attack(b);
     zaz->attack(b);
-    zaz->attack(b);
-    zaz->attack(b);
-    zaz->attack(b);
     std::cout << *zaz;
     zaz->attack(b);
     std::cout << *zaz;
-    delete b;
     delete pr;
     delete pf;
     delete zaz;
   }
-
   return 0;
 }

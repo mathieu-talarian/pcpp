@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/05 23:39:01 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/06 00:23:35 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/06 13:15:50 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
   virtual ~Enemy();
 
   int getHP(void) const;
-  std::string getType(void) const;
+  std::string const &getType(void) const;
 
   void setHP(int);
   void setType(std::string);
