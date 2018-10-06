@@ -14,24 +14,27 @@ int main() {
     AWeapon *pr = new PlasmaRifle();
     AWeapon *pf = new PowerFist();
     zaz->equip(pr);
-    zaz->attack(b);
+    // zaz->attack(b);
     std::cout << *zaz;
     zaz->equip(pf);
-    zaz->attack(b);
+    // zaz->attack(b);
     std::cout << *zaz;
     zaz->equip(pr);
     std::cout << *zaz;
-    zaz->attack(b);
-    zaz->attack(b);
-    zaz->attack(b);
-    zaz->attack(b);
-    zaz->attack(b);
+    // zaz->attack(b);
+    // zaz->attack(b);
+    // zaz->attack(b);
+    // zaz->attack(b);
+    // zaz->attack(b);
     std::cout << *zaz;
     zaz->attack(b);
     std::cout << *zaz;
     delete pr;
     delete pf;
     delete zaz;
-  }
+    if (b->getHP() > 0) {
+      delete b;
+    }
+  } 
   return 0;
 }
