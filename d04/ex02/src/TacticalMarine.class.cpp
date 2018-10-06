@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/06 13:44:57 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/06 15:59:34 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/07 00:15:15 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ TacticalMarine &TacticalMarine::operator=(TacticalMarine const &cpy) {
 TacticalMarine::~TacticalMarine() { std::cout << "Aaargh ..." << std::endl; }
 
 ISpaceMarine *TacticalMarine::clone() const {
+  std::cout << "clone" << std::endl;
   ISpaceMarine *ret = new TacticalMarine(*this);
   return ret;
 }

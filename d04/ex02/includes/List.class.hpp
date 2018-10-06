@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/06 15:00:47 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/06 17:12:21 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/06 23:22:59 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ public:
 
 private:
   t_node *_head, *_tail;
+
+  void _rm();
 
   void _deletefn(ISpaceMarine *);
 };

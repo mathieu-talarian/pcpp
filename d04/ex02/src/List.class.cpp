@@ -6,13 +6,14 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/06 15:00:24 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/06 17:15:03 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/07 00:26:19 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "List.class.hpp"
 #include "ISpaceMarine.class.hpp"
 #include "Squad.class.hpp"
+#include "TacticalMarine.class.hpp"
 #include <iostream>
 #include <stdlib.h>
 
@@ -22,13 +23,17 @@ List::List(List const &cpy) { *this = cpy; }
 
 List &List::operator=(List const &cpy) {
   if (this != &cpy) {
-    this->_head = cpy._head;
-    this->_tail = cpy._tail;
+    this->_rm();
+    // t_node *head = cpy._head;
+    // // while (head) {
+    // this->createNode(((ISpaceMarine *)(head->data))->clone());
+    // // head = head->next;
+    // // }
   }
   return *this;
 }
 
-List::~List() {
+void List::_rm() {
   t_node *h = this->_head;
   while (h) {
     t_node *tmp = h->next;
@@ -37,6 +42,8 @@ List::~List() {
     h = tmp;
   }
 }
+
+List::~List() { this->_rm(); }
 
 void *List::getHead(void) const { return this->_head; }
 void *List::getTail(void) const { return this->_tail; }
@@ -57,7 +64,6 @@ void List::createNode(void *node) {
   t_node *tmp = new (t_node);
   tmp->data = node;
   tmp->next = NULL;
-
   if (this->_head == NULL) {
     this->_head = tmp;
     this->_tail = tmp;
