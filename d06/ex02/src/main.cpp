@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/10 18:49:43 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/10 19:02:43 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/10 21:39:08 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void identify_from_pointer(Base *gen) {
   A *a = dynamic_cast<A *>(gen);
   std::cout << (a ? "A" : "Not A") << std::endl;
   B *b = dynamic_cast<B *>(gen);
-  std::cout << (b ? "B" : " Not B") << std::endl;
+  std::cout << (b ? "B" : "Not B") << std::endl;
   C *c = dynamic_cast<C *>(gen);
   std::cout << (c ? "C" : "Not C") << std::endl;
 }
@@ -76,6 +76,7 @@ void identify_from_reference(Base &gen) {
 }
 
 int main() {
+  srand(time(NULL));
   Base *gen = generate();
   identify_from_pointer(gen);
   identify_from_reference(*gen);

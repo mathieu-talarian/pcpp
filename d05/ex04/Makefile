@@ -6,19 +6,22 @@
 #    By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/08 22:09:06 by mmoullec          #+#    #+#              #
-#    Updated: 2018/10/10 19:54:22 by mmoullec         ###   ########.fr        #
+#    Updated: 2018/10/09 18:29:35 by mmoullec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=conversion
+NAME=obc
 CC=clang++
-FLAGS=-Wall -Werror -Wextra -std=c++98 -g3 -fsanitize=address -std=c++98
+FLAGS=-Wall -Werror -Wextra -std=c++98 -g3 -fsanitize=address
 INCL=-Iincludes
 OBJ=$(SRC:.cpp=.o)
 
 
 SRC_PATH= src
-SRC_NAME= main.cpp Conversion.class.cpp
+SRC_NAME= Bureaucrat.class.cpp Form.class.cpp main.cpp \
+ShrubberyCreationForm.class.cpp RobotomyRequestForm.class.cpp \
+PresidentialPardonForm.class.cpp Intern.class.cpp \
+OfficeBlock.class.cpp
 OBJ_PATH= obj
 OBJ_NAME = $(SRC_NAME:.cpp=.o)
 

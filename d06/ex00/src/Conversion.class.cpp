@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/10 17:21:10 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/10 18:07:24 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/10 20:37:38 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,6 @@ int Conversion::_buildPrec(std::string str) {
   return ((str.length() == prev || next == 1) ? 1 : next - 1);
 }
 
-std::ostream &Conversion::prec(std::ostream &o) {
-  o << std::setprecision(this->_p) << std::fixed;
-  return o;
-}
-
 char Conversion::toChar() {
   if (std::isnan(this->_val))
     throw Conversion::ImpossibleConv();
@@ -63,7 +58,7 @@ char Conversion::toChar() {
 }
 
 int Conversion::toInt() {
-  if (std::isnan(this->_val) || std::isinf(this->_val))
+  if (this->_isNan(this->_val) || !isfinite(this->_val))
     throw Conversion::ImpossibleConv();
   if (this->_val > static_cast<double>(INT_MAX) ||
       this->_val < static_cast<double>(INT_MIN))
@@ -71,7 +66,11 @@ int Conversion::toInt() {
   return static_cast<int>(this->_val);
 }
 
-double Conversion::toDouble() { return static_cast<double>(this->_val); }
+double Conversion::toDouble() { 
+  if (this->_isNan(this->_val) || !isfinite(this->_val))
+    throw Conversion::ImpossibleConv();
+  return static_cast<double>(this->_val);
+}
 
 float Conversion::toFloat() { return static_cast<float>(this->_val); }
 
@@ -107,3 +106,11 @@ const char *Conversion::NonDisplayableConv::what() const throw() {
   return ("Cannot be displayed");
 }
 Conversion::NonDisplayableConv::~NonDisplayableConv(void) throw() {}
+
+bool Conversion::_isNan(char x) const { return static_cast<char>(x) != x; }
+
+bool Conversion::_isNan(int x) const { return static_cast<int>(x) != x; }
+
+bool Conversion::_isNan(float x) const { return static_cast<float>(x) != x; }
+
+bool Conversion::_isNan(double x) const { return static_cast<double>(x) != x; }

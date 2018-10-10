@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/10 00:35:27 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/10 18:05:44 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/10 20:31:46 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,11 @@ public:
   };
 
 private:
+  bool _isNan(char) const;
+  bool _isNan(int) const;
+  bool _isNan(float) const;
+  bool _isNan(double) const;
+
   int _buildPrec(std::string);
   double _val;
   int _p;

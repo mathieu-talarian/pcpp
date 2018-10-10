@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/09 00:14:27 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/09 16:56:23 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/09 18:31:04 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ Form *Intern::makeForm(std::string name, std::string target) {
                           "shrubbery creation"};
 
   typedef Form *(Intern::*memberFunction)(std::string);
-
   memberFunction mf[] = {&Intern::_newP, &Intern::_newR, &Intern::_newS};
 
   for (int i = 0; i < 3; i += 1) {
@@ -33,7 +32,6 @@ Form *Intern::makeForm(std::string name, std::string target) {
       return (this->*(mf[i]))(target);
   }
   throw Intern::FormNotFoundException();
-  return NULL;
 }
 
 Intern::FormNotFoundException::FormNotFoundException() {}

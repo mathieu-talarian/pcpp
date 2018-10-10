@@ -6,7 +6,7 @@
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/09 00:13:34 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/09 16:56:25 by mmoullec         ###   ########.fr       */
+/*   Updated: 2018/10/09 18:30:51 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include <iostream>
 
 class Form;
+using namespace std;
 class Intern {
 
 public:
@@ -30,7 +31,7 @@ public:
 
   Form *makeForm(std::string, std::string);
 
-  class FormNotFoundException : public std::exception {
+  class FormNotFoundException : public exception {
   public:
     FormNotFoundException();
     FormNotFoundException(FormNotFoundException const &);
@@ -40,6 +41,7 @@ public:
   };
 
 private:
+  // Form *_searchForm(std::string, std::string);
   Form *_newP(std::string);
   Form *_newR(std::string);
   Form *_newS(std::string);

@@ -1,51 +1,65 @@
 #include <iostream>
 #include <stdlib.h>
 
-typedef struct s_data {
+struct Data {
   std::string s1;
   int n;
   std::string s2;
-} t_data;
+};
 
-void print(t_data *ptr) {
+void print(Data *ptr) {
   std::cout << ptr->s1 << std::endl;
   std::cout << ptr->n << std::endl;
   std::cout << ptr->s2 << std::endl;
 }
 
 void *serialize() {
-  t_data *ret = new t_data;
-  for (int i = 0; i < 8; i++) {
+  char *str = new char[20]();
+  bzero(str, 20);
+
+  int j = (rand() % INT_MAX) * ((rand() % 2 == 0 ? 1 : -1));
+  int i;
+
+  for (i = 0; i < 8; i++) {
     char c = (char)((rand() % 74) + 48);
     if (isalnum(c)) {
-      ret->s1 += c;
+      str[i] += c;
     } else {
       i--;
     }
   }
-  ret->n = rand() % INT_MAX;
-  for (int i = 0; i < 8; i++) {
+  str[i++] = static_cast<char>(j & 0xFF);
+  str[i++] = static_cast<char>(j >> 8 & 0xff);
+  str[i++] = static_cast<char>(j >> 16 & 0xff);
+  str[i++] = static_cast<char>(j >> 24 & 0xff);
+  for (; i < 20; i++) {
     char c = (char)((rand() % 74) + 48);
     if (isalnum(c)) {
-      ret->s2 += c;
+      str[i] += c;
     } else {
       i--;
     }
   }
-  // print(ret);
-  return ret;
+  return str;
 }
 
-t_data *deserialize(void *raw) {
-  t_data *ret = reinterpret_cast<t_data *>(raw);
+Data *deserialize(void *raw) {
+  char *str = reinterpret_cast<char *>(raw);
+  Data *ret = new Data;
+  for (int i = 0; i < 8; i++) {
+    ret->s1 += str[i];
+  }
+  ret->n = *reinterpret_cast<int *>(str + 8);
+  for (int i = 12; i < 20; i++) {
+    ret->s2 += str[i];
+  }
   return ret;
 }
 
 int main(void) {
   std::srand(std::time(0));
   void *seri = serialize();
-  t_data *ptr = deserialize(seri);
+  Data *ptr = deserialize(seri);
   print(ptr);
-  delete ptr;
   return 0;
 }
