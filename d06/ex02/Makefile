@@ -6,11 +6,11 @@
 #    By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/08 22:09:06 by mmoullec          #+#    #+#              #
-#    Updated: 2018/10/10 17:48:57 by mmoullec         ###   ########.fr        #
+#    Updated: 2018/10/10 19:04:11 by mmoullec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=conversion
+NAME=realtype
 CC=clang++
 FLAGS=-Wall -Werror -Wextra -std=c++98 -g3 -fsanitize=address
 INCL=-Iincludes
@@ -18,7 +18,7 @@ OBJ=$(SRC:.cpp=.o)
 
 
 SRC_PATH= src
-SRC_NAME= main.cpp Conversion.class.cpp
+SRC_NAME= main.cpp A.class.cpp B.class.cpp C.class.cpp Base.class.cpp
 OBJ_PATH= obj
 OBJ_NAME = $(SRC_NAME:.cpp=.o)
 

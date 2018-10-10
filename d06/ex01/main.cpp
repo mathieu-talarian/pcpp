@@ -1,59 +1,51 @@
-#include "Serializer.class.hpp"
 #include <iostream>
 #include <stdlib.h>
 
-struct SerData {
-  char s1[9];
-  int n;
-  char s2[9];
-};
-
-struct Data {
+typedef struct s_data {
   std::string s1;
   int n;
   std::string s2;
-};
+} t_data;
 
-void rand_str(char *s) {
-  int i;
-
-  i = 0;
-  while (i < 8) {
-    while (!isalnum(s[i]))
-      s[i] = (char)((rand() % 74) + 48);
-    i++;
-  }
-  s[i] = '\0';
-}
-
-void *serialize(void) {
-  SerData *dat = new SerData;
-
-  rand_str(dat->s1);
-  dat->n = rand() % 9 + 48;
-  rand_str(dat->s2);
-  return reinterpret_cast<void *>(dat);
-}
-
-Data *deserialize(void *ptr) {
-  SerData *dat;
-  Data *data = new Data;
-
-  dat = reinterpret_cast<SerData *>(ptr);
-  data->s1 = static_cast<std::string>(dat->s1);
-  data->n = dat->n;
-  data->s2 = static_cast<std::string>(dat->s2);
-  return (data);
-}
-
-int main(void) {
-  void *tmp;
-  Data *ptr;
-
-  std::srand(std::time(0));
-  tmp = serialize();
-  ptr = deserialize(tmp);
+void print(t_data *ptr) {
   std::cout << ptr->s1 << std::endl;
   std::cout << ptr->n << std::endl;
   std::cout << ptr->s2 << std::endl;
+}
+
+void *serialize() {
+  t_data *ret = new t_data;
+  for (int i = 0; i < 8; i++) {
+    char c = (char)((rand() % 74) + 48);
+    if (isalnum(c)) {
+      ret->s1 += c;
+    } else {
+      i--;
+    }
+  }
+  ret->n = rand() % INT_MAX;
+  for (int i = 0; i < 8; i++) {
+    char c = (char)((rand() % 74) + 48);
+    if (isalnum(c)) {
+      ret->s2 += c;
+    } else {
+      i--;
+    }
+  }
+  // print(ret);
+  return ret;
+}
+
+t_data *deserialize(void *raw) {
+  t_data *ret = reinterpret_cast<t_data *>(raw);
+  return ret;
+}
+
+int main(void) {
+  std::srand(std::time(0));
+  void *seri = serialize();
+  t_data *ptr = deserialize(seri);
+  print(ptr);
+  delete ptr;
   return 0;
+}

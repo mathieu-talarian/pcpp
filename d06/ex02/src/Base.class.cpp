@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Conversion.class.hpp                               :+:      :+:    :+:   */
+/*   Base.class.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoullec <mmoullec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/10 00:35:27 by mmoullec          #+#    #+#             */
-/*   Updated: 2018/10/10 00:38:57 by mmoullec         ###   ########.fr       */
+/*   Created: 2018/10/10 18:48:42 by mmoullec          #+#    #+#             */
+/*   Updated: 2018/10/10 18:48:52 by mmoullec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONVERSION_CLASS_HPP
-#define CONVERSION_CLASS_HPP
+#include "Base.class.hpp"
 
-class Conversion {
-public:
-  Conversion();
-  Conversion(const Conversion &);
-  Conversion &operator=(const Conversion &);
-  ~Conversion();
-
-  const char toChar(double);
-  const int toInt(double);
-  const double toDouble(double);
-  const float toFloat(double);
-
-private:
-};
-
-#endif // !CONVERSION_CLASS_HPP
+Base::Base() {}
+Base::Base(Base const &cpy) { *this = cpy; }
+Base &Base::operator=(Base const &cpy) {
+  if (this != &cpy) {
+  }
+  return *this;
+}
+Base::~Base(void) {}
