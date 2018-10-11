@@ -21,15 +21,17 @@ int main() {
       (*Trick)[i] = i;
       std::cout << (*Trick)[i] << std::endl;
     }
-    // Trick[i] = 12;
-    // Array<int> *cpy = new Array<int>(*Trick);
   } catch (std::exception &e) {
     std::cout << e.what() << std::endl;
   }
 
   Array<int> *cpy2 = new Array<int>();
   cpy2 = Trick;
-
+  try {
+  std::cout << "CPY-> " << (*cpy2)[12] << std::endl;
+  } catch (std::exception &e) {
+    std::cout << e.what() << std::endl;
+  }
   ////////////////////////////////////////////////
   Array<float> v(12);
   for (float y = 0.0f; y < 12.0f; y++) {
